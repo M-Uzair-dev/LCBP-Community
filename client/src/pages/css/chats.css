@@ -1,0 +1,179 @@
+.chatspage {
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background: linear-gradient(to bottom, #9382dd, #50a8c9);
+  font-weight: 300 !important;
+  font-family: "Poppins", sans-serif !important;
+  overflow-x: hidden;
+}
+.topbar {
+  width: 95vw;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  background-color: rgba(250, 235, 215, 0.123);
+  border-radius: 10px;
+  gap: 50px;
+  padding: 20px;
+}
+.topbar > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.topBarLogo {
+  height: 40px !important;
+  margin-bottom: 18px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.topbar > p {
+  margin: 0 20px;
+  font-size: 1.4rem;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+.hello {
+  font-size: 1.5rem;
+  margin: 40px auto;
+  font-weight: 400 !important;
+  max-width: 95vw;
+  text-align: center;
+}
+.name {
+  background: linear-gradient(to right, #f12711, #f5af19) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+
+  font-weight: 500;
+  font-size: 30px;
+}
+.hello > span {
+  background: linear-gradient(to right, #9858cf, #9900e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  font-size: 30px;
+}
+.chats {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+.chat {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.075);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.chat:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+}
+.chat:hover > p {
+  scale: 1.02;
+}
+.chat > p {
+  font-size: 1.2rem;
+  padding: 0;
+  transition: all 0.7s ease;
+  margin: 0;
+}
+.messages {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.messages > p {
+  width: max-content;
+  background-color: rgba(255, 255, 255, 0.11);
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin: 0;
+  max-width: 100%;
+}
+.inputDiv {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+.inputinchat {
+  font-size: 18px !important;
+  width: 90% !important;
+}
+.inputDiv > p {
+  padding: 5px 15px;
+  background-color: rgb(0, 153, 255);
+  border-radius: 10px;
+}
+.backButton {
+  color: white;
+  position: fixed;
+  top: 10px;
+  left: 15px;
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.addcommunity {
+  background-color: rgb(144, 202, 250);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100;
+  width: 95vw;
+  max-width: 300px;
+}
+.addcommunity > button {
+  margin-top: 20px !important;
+}
+@media (max-width: 750px) {
+  .topbar {
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    margin: 0;
+  }
+  .topbar > div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 650px) {
+  .topbar {
+    padding-top: 70px;
+    width: max-content;
+    max-width: 95%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+}
