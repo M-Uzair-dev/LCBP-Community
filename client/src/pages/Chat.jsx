@@ -17,15 +17,18 @@ const Chat = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/auth/messages", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            id,
-          }),
-        });
+        const response = await fetch(
+          "https://lcbp-community-api.vercel.app/auth/messages",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              id,
+            }),
+          }
+        );
         const data = await response.json();
         if (!data.success) {
           toast.error(data.message);
@@ -60,17 +63,20 @@ const Chat = () => {
 
   const sendMessage = async () => {
     try {
-      const response = await fetch("http://localhost:5000/auth/newMessage", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id,
-          message,
-          userID: localStorage.getItem("user"),
-        }),
-      });
+      const response = await fetch(
+        "https://lcbp-community-api.vercel.app/auth/newMessage",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id,
+            message,
+            userID: localStorage.getItem("user"),
+          }),
+        }
+      );
       const tempdata = await response.json();
       if (!tempdata.success) {
         toast.error(tempdata.message);

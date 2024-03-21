@@ -25,16 +25,19 @@ const Login = () => {
         toast.error("Please fill all fields");
         return;
       }
-      let ResponseData = await fetch("http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          phone: data.phone,
-          password: data.password,
-        }),
-      });
+      let ResponseData = await fetch(
+        "https://lcbp-community-api.vercel.app/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phone: data.phone,
+            password: data.password,
+          }),
+        }
+      );
 
       let json = await ResponseData.json();
       if (json.success) {

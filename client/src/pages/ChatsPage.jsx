@@ -19,7 +19,9 @@ const ChatsPage = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/auth/get");
+        const response = await fetch(
+          "https://lcbp-community-api.vercel.app/auth/get"
+        );
         const data = await response.json();
         if (!data.success) {
           toast.error(data.message);
@@ -40,16 +42,19 @@ const ChatsPage = () => {
   const createCommunity = async () => {
     try {
       setButtonText("Creating...");
-      const response = await fetch("http://localhost:5000/auth/new", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: message,
-          id: localStorage.getItem("user"),
-        }),
-      });
+      const response = await fetch(
+        "https://lcbp-community-api.vercel.app/auth/new",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: message,
+            id: localStorage.getItem("user"),
+          }),
+        }
+      );
       const data = await response.json();
       if (!data.success) {
         toast.error(data.message);

@@ -31,17 +31,20 @@ const Signup = () => {
         toast.error("Passwords do not match");
         return;
       }
-      let ResponseData = await fetch("http://localhost:5000/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: data.name,
-          phone: data.phone,
-          password: data.password,
-        }),
-      });
+      let ResponseData = await fetch(
+        "https://lcbp-community-api.vercel.app/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: data.name,
+            phone: data.phone,
+            password: data.password,
+          }),
+        }
+      );
 
       let json = await ResponseData.json();
       if (json.success) {
