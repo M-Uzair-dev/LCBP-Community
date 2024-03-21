@@ -79,6 +79,14 @@ const ChatsPage = () => {
           <img src={logo} className="topBarLogo" />
           <h1>LCBP Community</h1>
         </div>
+        <p
+          onClick={() => {
+            localStorage.clear();
+            navigate("/login");
+          }}
+        >
+          Logout
+        </p>
         {admin ? (
           <p onClick={() => setShowAddCommunity(!showAddCommunity)}>
             Add Community
