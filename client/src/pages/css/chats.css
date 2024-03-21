@@ -157,6 +157,11 @@
 .addcommunity > button {
   margin-top: 20px !important;
 }
+.topbarright > * {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
 @media (max-width: 750px) {
   .topbar {
     flex-direction: column;
