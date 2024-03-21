@@ -92,9 +92,7 @@ const ChatsPage = () => {
             <p onClick={() => setShowAddCommunity(!showAddCommunity)}>
               Add Community
             </p>
-          ) : (
-            <p></p>
-          )}
+          ) : null}
         </div>
       </div>
       <div
