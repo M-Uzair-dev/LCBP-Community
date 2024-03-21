@@ -7,7 +7,12 @@ const authRoutes = require("./Routes/authRoutes");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://lcbp-community.vercel.app",
+  })
+);
 
 mongoose
   .connect(process.env.DB_URL)
