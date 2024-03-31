@@ -7,6 +7,7 @@ import { Button, Input } from "@mui/material";
 
 const ChatsPage = () => {
   const navigate = useNavigate();
+const username = localStorage.getItem("name")
   const admin = localStorage.getItem("admin") === "true";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -131,7 +132,7 @@ const ChatsPage = () => {
         </Button>
       </div>
       <p className="hello">
-        Hello <span className="name">Uzair</span>, Welcome to
+        Hello <span className="name">{username}</span>, Welcome to
         <span> LCBP Community</span>.
       </p>
       <div className="chats">
