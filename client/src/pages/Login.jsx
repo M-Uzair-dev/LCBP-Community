@@ -44,7 +44,8 @@ const Login = () => {
         json.User.admin && localStorage.setItem("admin", true);
         toast.success("Logged in successfully");
         localStorage.setItem("loggedIn", true);
-        localStorage.setItem("user", json.User._id);
+        localStorage.setItem("user", json.User._id);        
+        localStorage.setItem("name", json.User.name);
         navigate("/");
       } else {
         toast.error(json.message);
